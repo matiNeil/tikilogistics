@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Mail, MapPin, Phone } from "lucide-react";
 
 const LINKS = [
@@ -15,9 +16,13 @@ export default function Footer() {
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
         <div className="grid md:grid-cols-3 gap-12 pb-14 border-b border-gold/15">
           <div>
-            <span className="font-display font-semibold text-xl tracking-[0.15em] uppercase text-offwhite">
-              Tiki<span className="text-gold-gradient">Logistics</span>
-            </span>
+            <Image
+              src="/tiki-logo.png"
+              alt="Tiki Logistics"
+              width={1353}
+              height={239}
+              className="h-9 w-auto"
+            />
             <p className="mt-5 text-sm text-offwhite-dim font-light leading-relaxed max-w-xs">
               Premium transportation and logistics solutions built for
               reliability, speed, and control.
@@ -49,22 +54,22 @@ export default function Footer() {
             <ul className="space-y-4">
               <li className="flex items-start gap-3 text-sm text-offwhite-dim">
                 <Phone size={16} className="text-gold shrink-0 mt-0.5" />
-                <a href="tel:+27110000000" className="hover:text-gold transition-colors duration-300">
-                  +27 11 000 0000
+                <a href="tel:+263785532894" className="hover:text-gold transition-colors duration-300">
+                  +263 785 532 894
                 </a>
               </li>
               <li className="flex items-start gap-3 text-sm text-offwhite-dim">
                 <Mail size={16} className="text-gold shrink-0 mt-0.5" />
                 <a
-                  href="mailto:dispatch@tikilogistics.com"
+                  href="mailto:info@tikilogistics.co.zw"
                   className="hover:text-gold transition-colors duration-300"
                 >
-                  dispatch@tikilogistics.com
+                  info@tikilogistics.co.zw
                 </a>
               </li>
               <li className="flex items-start gap-3 text-sm text-offwhite-dim">
                 <MapPin size={16} className="text-gold shrink-0 mt-0.5" />
-                <span>Johannesburg, South Africa</span>
+                <span>Harare, Zimbabwe</span>
               </li>
             </ul>
           </div>
@@ -73,9 +78,6 @@ export default function Footer() {
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-xs text-offwhite-dim/60">
             &copy; {new Date().getFullYear()} Tiki Logistics. All rights reserved.
-          </p>
-          <p className="text-xs text-offwhite-dim/60 tracking-widest uppercase">
-            Moving Business Forward
           </p>
           <a
             href="https://www.forgestackx.com"
@@ -87,6 +89,9 @@ export default function Footer() {
             <span className="font-medium text-red-500">Forge</span>
             <span className="font-medium text-blue-500">StackX</span>
           </a>
+          <p className="text-xs text-offwhite-dim/60 tracking-widest uppercase">
+            Moving Business Forward
+          </p>
         </div>
       </div>
     </footer>

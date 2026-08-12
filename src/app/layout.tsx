@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Oswald, Inter } from "next/font/google";
+import WhatsAppButton from "@/components/WhatsAppButton";
 import "./globals.css";
 
 const oswald = Oswald({
@@ -28,6 +29,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     >
       <body className="min-h-full flex flex-col bg-ink text-offwhite">
         {children}
+        <WhatsAppButton />
       </body>
     </html>
   );

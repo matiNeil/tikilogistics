@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import { Menu, X } from "lucide-react";
 
 const LINKS = [
@@ -31,10 +32,15 @@ export default function Navbar() {
       }`}
     >
       <nav className="mx-auto max-w-7xl px-6 lg:px-10 flex items-center justify-between">
-        <a href="#top" className="flex items-center gap-2 group">
-          <span className="font-display font-semibold text-xl md:text-2xl tracking-[0.15em] uppercase text-offwhite">
-            Tiki<span className="text-gold-gradient">Logistics</span>
-          </span>
+        <a href="#top" className="flex items-center group">
+          <Image
+            src="/tiki-logo.png"
+            alt="Tiki Logistics"
+            width={1353}
+            height={239}
+            priority
+            className="h-8 md:h-10 w-auto"
+          />
         </a>
 
         <div className="hidden lg:flex items-center gap-10">
