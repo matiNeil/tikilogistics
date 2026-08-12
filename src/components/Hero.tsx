@@ -1,5 +1,5 @@
+import Image from "next/image";
 import { ArrowRight, ChevronRight } from "lucide-react";
-import TruckSilhouette from "./TruckSilhouette";
 
 export default function Hero() {
   return (
@@ -7,31 +7,21 @@ export default function Hero() {
       id="top"
       className="relative min-h-[100svh] flex items-center overflow-hidden bg-ink grain"
     >
-      {/* cinematic background layers */}
-      <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_-10%,rgba(201,162,39,0.16),transparent_60%)]" />
-        <div className="absolute inset-0 bg-[linear-gradient(180deg,#08080a_0%,#0c0c0e_55%,#08080a_100%)]" />
-        {/* perspective road grid */}
-        <div
-          className="absolute inset-x-0 bottom-0 h-[45%] opacity-25"
-          style={{
-            backgroundImage:
-              "linear-gradient(rgba(230,198,103,0.35) 1px, transparent 1px), linear-gradient(90deg, rgba(230,198,103,0.35) 1px, transparent 1px)",
-            backgroundSize: "80px 80px",
-            maskImage:
-              "linear-gradient(to top, black, transparent), radial-gradient(ellipse 60% 100% at 50% 100%, black, transparent)",
-            maskComposite: "intersect",
-            WebkitMaskComposite: "source-in",
-            transform: "perspective(500px) rotateX(55deg)",
-            transformOrigin: "bottom",
-          }}
-        />
-        <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[900px] h-[900px] rounded-full bg-gold/10 blur-[140px] animate-pulse-glow" />
-      </div>
+      {/* cinematic truck photo */}
+      <Image
+        src="/hero-truck-1.jpg"
+        alt="Tiki Logistics truck on the road at sunset"
+        fill
+        priority
+        sizes="100vw"
+        className="object-cover"
+        style={{ objectPosition: "40% center" }}
+      />
 
-      <TruckSilhouette className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[140%] max-w-none md:w-[90%] opacity-70" />
-
-      <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/40 to-transparent" />
+      {/* scrims for legibility */}
+      <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/70 to-ink/30" />
+      <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/10 to-ink/40" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_-10%,rgba(201,162,39,0.12),transparent_60%)]" />
 
       {/* content */}
       <div className="relative z-10 mx-auto max-w-7xl w-full px-6 lg:px-10 pt-28 pb-24">

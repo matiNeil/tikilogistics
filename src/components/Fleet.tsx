@@ -1,5 +1,5 @@
+import Image from "next/image";
 import ScrollReveal from "./ScrollReveal";
-import TruckSilhouette from "./TruckSilhouette";
 
 const FLEET_POINTS = [
   "Commercial delivery vehicles for smaller, time-sensitive loads",
@@ -52,10 +52,20 @@ export default function Fleet() {
 
         <div className="lg:col-span-6">
           <ScrollReveal delay={200}>
-            <div className="relative border border-gold/25 bg-charcoal p-10 md:p-14">
-              <div className="absolute top-0 left-0 h-8 w-8 border-t border-l border-gold" />
-              <div className="absolute bottom-0 right-0 h-8 w-8 border-b border-r border-gold" />
-              <TruckSilhouette className="w-full h-auto" />
+            <div className="relative border border-gold/25 bg-charcoal p-3">
+              <div className="absolute top-0 left-0 h-8 w-8 border-t border-l border-gold z-10" />
+              <div className="absolute bottom-0 right-0 h-8 w-8 border-b border-r border-gold z-10" />
+              <div className="relative aspect-[4/3] overflow-hidden">
+                <Image
+                  src="/hero-truck-1.jpg"
+                  alt="Tiki Logistics fleet truck"
+                  fill
+                  sizes="(min-width: 1024px) 50vw, 100vw"
+                  className="object-cover"
+                  style={{ objectPosition: "30% 40%" }}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent" />
+              </div>
             </div>
           </ScrollReveal>
         </div>
